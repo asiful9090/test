@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://onetapcampus.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (when backend is added)
+# Disallow: /admin/
+# Disallow: /api/
+# Disallow: /private/
+
+# Allow important pages
+Allow: /features/
+Allow: /academics/
+Allow: /events/
+Allow: /community/
+Allow: /support/
+
+# Block common bot traps
+Disallow: /search?
+Disallow: /*?*
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$

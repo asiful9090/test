@@ -1,0 +1,47 @@
+{
+  "name": "onetapcampus",
+  "version": "1.0.0",
+  "description": "All your campus essentials—one click away. A modern campus management platform for students.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build process needed'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'",
+    "deploy": "echo 'Deploy to your preferred hosting service'"
+  },
+  "keywords": [
+    "campus",
+    "student",
+    "university",
+    "education",
+    "management",
+    "portal",
+    "bangladesh",
+    "responsive",
+    "pwa",
+    "tailwindcss"
+  ],
+  "author": "OneTapCampus Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/onetapcampus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/onetapcampus/issues"
+  },
+  "homepage": "https://onetapcampus.com",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
