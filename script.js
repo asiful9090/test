@@ -236,24 +236,205 @@ function initTestimonialSlider() {
 
 // CTA Button Click Handlers
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle "Start Now" buttons
-    const startButtons = document.querySelectorAll('button:contains("Start Now"), .bg-primary');
-    startButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            showNotification('Redirecting to sign up page...', 'info');
-            // Add your sign-up logic here
-        });
+    // Handle all "Start Now" buttons by ID
+    const startNowButtons = [
+        'hero-start-now',
+        'nav-start-now', 
+        'mobile-start-now'
+    ];
+    
+    startNowButtons.forEach(id => {
+        const button = document.getElementById(id);
+        if (button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Redirecting to sign up page...', 'info');
+                // Simulate redirect after 2 seconds
+                setTimeout(() => {
+                    window.location.href = '/signup.html';
+                }, 2000);
+            });
+        }
     });
     
     // Handle "Watch Demo" button
-    const demoButton = document.querySelector('button:contains("Watch Demo")');
-    if (demoButton) {
-        demoButton.addEventListener('click', function() {
+    const watchDemoButton = document.getElementById('hero-watch-demo');
+    if (watchDemoButton) {
+        watchDemoButton.addEventListener('click', function(e) {
+            e.preventDefault();
             showNotification('Opening demo video...', 'info');
-            // Add your demo video logic here
+            setTimeout(() => {
+                openDemoVideo();
+            }, 1000);
         });
     }
+    
+    // Handle "Learn more" links
+    const learnMoreLinks = document.querySelectorAll('a[href="#"]');
+    learnMoreLinks.forEach(link => {
+        if (link.textContent.includes('Learn more')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Feature details coming soon...', 'info');
+            });
+        }
+    });
+    
+    // Handle "View All Events" button
+    const viewEventsButton = document.getElementById('view-all-events');
+    if (viewEventsButton) {
+        viewEventsButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Loading all events...', 'info');
+            setTimeout(() => {
+                window.location.href = '/events.html';
+            }, 1500);
+        });
+    }
+    
+    // Handle "Explore Academics" button
+    const exploreAcademicsButton = document.getElementById('explore-academics');
+    if (exploreAcademicsButton) {
+        exploreAcademicsButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Opening academic dashboard...', 'info');
+            setTimeout(() => {
+                window.location.href = '/academics.html';
+            }, 1500);
+        });
+    }
+    
+    // Handle "Explore All Clubs" button
+    const exploreClubsButton = document.getElementById('explore-all-clubs');
+    if (exploreClubsButton) {
+        exploreClubsButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showNotification('Loading all clubs and communities...', 'info');
+            setTimeout(() => {
+                window.location.href = '/community.html';
+            }, 1500);
+        });
+    }
+    
+    // Handle navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Handle footer links
+    const footerLinks = document.querySelectorAll('footer a[href="#"]');
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const linkText = this.textContent.trim();
+            
+            if (linkText === 'Privacy Policy') {
+                showNotification('Privacy Policy page coming soon...', 'info');
+            } else if (linkText === 'Terms of Service') {
+                showNotification('Terms of Service page coming soon...', 'info');
+            } else if (linkText === 'Help Center') {
+                showNotification('Help Center opening...', 'info');
+                setTimeout(() => {
+                    window.location.href = '/help.html';
+                }, 1500);
+            } else if (linkText === 'Contact Us') {
+                window.location.href = '/contact.html';
+            } else {
+                showNotification(`${linkText} page coming soon...`, 'info');
+            }
+        });
+    });
+    
+    // Handle social media links
+    const socialLinks = document.querySelectorAll('a[href="#"]');
+    socialLinks.forEach(link => {
+        if (link.querySelector('i.fab')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const platform = this.querySelector('i.fab').className;
+                let platformName = 'social media';
+                
+                if (platform.includes('facebook')) platformName = 'Facebook';
+                else if (platform.includes('twitter')) platformName = 'Twitter';
+                else if (platform.includes('instagram')) platformName = 'Instagram';
+                else if (platform.includes('linkedin')) platformName = 'LinkedIn';
+                
+                showNotification(`Opening ${platformName}...`, 'info');
+                setTimeout(() => {
+                    window.open(`https://${platformName.toLowerCase()}.com/onetapcampus`, '_blank');
+                }, 1000);
+            });
+        }
+    });
+    
+    // Handle contact page specific buttons
+    const contactStartButtons = [
+        'contact-nav-start-now',
+        'contact-mobile-start-now'
+    ];
+    
+    contactStartButtons.forEach(id => {
+        const button = document.getElementById(id);
+        if (button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                showNotification('Redirecting to sign up page...', 'info');
+                setTimeout(() => {
+                    window.location.href = '/signup.html';
+                }, 2000);
+            });
+        }
+    });
 });
+
+// Demo video function
+function openDemoVideo() {
+    // Create modal for demo video
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+    modal.innerHTML = `
+        <div class="bg-white rounded-lg p-6 max-w-4xl w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-dark">OneTapCampus Demo</h3>
+                <button class="text-gray-500 hover:text-gray-700 text-2xl" onclick="this.closest('.fixed').remove()">&times;</button>
+            </div>
+            <div class="bg-gray-200 rounded-lg p-8 text-center">
+                <i class="fas fa-play-circle text-6xl text-primary mb-4"></i>
+                <p class="text-gray-600">Demo video will be available soon!</p>
+                <p class="text-sm text-gray-500 mt-2">Watch how OneTapCampus transforms your campus experience</p>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            modal.remove();
+        }
+    });
+}
 
 // Performance optimization: Lazy loading for images
 function initLazyLoading() {

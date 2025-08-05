@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - OneTapCampus</title>
+    <meta name="description" content="Get help and support for OneTapCampus features and services.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        accent: '#10b981',
+                        dark: '#111827',
+                        'primary-dark': '#1e40af',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        OneTapCampus
+                    </h1>
+                </a>
+                <a href="/" class="text-primary hover:text-primary-dark font-medium">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Help Center Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-dark mb-4">Help Center</h2>
+                <p class="text-xl text-gray-600">Find answers to common questions and get support</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-dark mb-2">How do I get started with OneTapCampus?</h3>
+                    <p class="text-gray-600">Simply click the "Start Now" button on our homepage and follow the registration process. You'll need your university email address to create an account.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-dark mb-2">Is OneTapCampus free to use?</h3>
+                    <p class="text-gray-600">Yes! OneTapCampus is completely free for all students. We believe education should be accessible to everyone.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-dark mb-2">Which universities are supported?</h3>
+                    <p class="text-gray-600">We're currently expanding our support to universities across Bangladesh and internationally. Contact us to request support for your university.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-dark mb-2">How secure is my data?</h3>
+                    <p class="text-gray-600">We take data security seriously. All data is encrypted, and we follow industry best practices to protect your information.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-dark mb-2">Can I use OneTapCampus on my mobile device?</h3>
+                    <p class="text-gray-600">Absolutely! OneTapCampus is fully responsive and works perfectly on all devices including smartphones and tablets.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Still need help? Contact our support team</p>
+                <a href="/contact.html" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    <i class="fas fa-headset mr-2"></i>
+                    Contact Support
+                </a>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="/" class="bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Homepage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
