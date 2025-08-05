@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneTapCampus - All your campus essentials—one click away</title>
+    <meta name="description" content="OneTapCampus helps students manage their entire campus life in one place. Academic tools, event updates, study materials, communities, and services.">
+    <meta name="keywords" content="University Management System, Campus Essentials App, Student Portal Bangladesh, Campus Management Tools">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="OneTapCampus - All your campus essentials—one click away">
+    <meta property="og:description" content="Help students manage their entire campus life in one place. Academic tools, event updates, study materials, communities, and services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onetapcampus.com">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        accent: '#10b981',
+                        dark: '#111827',
+                        hover: '#1e40af'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-slide {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-primary">OneTapCampus</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-dark hover:text-primary transition-colors">Features</a>
+                    <a href="#academics" class="text-dark hover:text-primary transition-colors">Academics</a>
+                    <a href="#events" class="text-dark hover:text-primary transition-colors">Events</a>
+                    <a href="#community" class="text-dark hover:text-primary transition-colors">Community</a>
+                    <a href="#support" class="text-dark hover:text-primary transition-colors">Support</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="bg-primary hover:bg-hover text-white px-6 py-2 rounded-lg transition-colors">
+                        Start Now
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-dark">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-dark hover:text-primary">Home</a>
+                <a href="#features" class="block py-2 text-dark hover:text-primary">Features</a>
+                <a href="#academics" class="block py-2 text-dark hover:text-primary">Academics</a>
+                <a href="#events" class="block py-2 text-dark hover:text-primary">Events</a>
+                <a href="#community" class="block py-2 text-dark hover:text-primary">Community</a>
+                <a href="#support" class="block py-2 text-dark hover:text-primary">Support</a>
+                <button class="w-full bg-primary hover:bg-hover text-white px-6 py-2 rounded-lg transition-colors mt-4">
+                    Start Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-16 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    All your campus essentials—<br>
+                    <span class="text-yellow-300">one click away</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+                    Help students manage their entire campus life in one place. Academic tools, event updates, study materials, communities, and services.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+                        <i class="fas fa-rocket mr-2"></i>Join Your Campus
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+                        <i class="fas fa-play mr-2"></i>Watch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Core Features</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Everything you need to excel in your academic journey, all in one powerful platform.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Study Materials -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-book text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Notes & Study Materials</h3>
+                    <p class="text-gray-600">Find, upload, and share class notes easily with your peers.</p>
+                </div>
+                
+                <!-- Event Calendar -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Event Calendar</h3>
+                    <p class="text-gray-600">Stay updated with university events, deadlines, and activities.</p>
+                </div>
+                
+                <!-- Class Schedule -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Smart Scheduler</h3>
+                    <p class="text-gray-600">Auto-generated class routine with smart reminders.</p>
+                </div>
+                
+                <!-- Smart Attendance -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-qrcode text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Smart Attendance</h3>
+                    <p class="text-gray-600">RFID/QR or mobile-based attendance system.</p>
+                </div>
+                
+                <!-- Marketplace -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-store text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Marketplace</h3>
+                    <p class="text-gray-600">Buy/sell secondhand books and items within campus.</p>
+                </div>
+                
+                <!-- Campus Jobs -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-briefcase text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Campus Jobs</h3>
+                    <p class="text-gray-600">Find part-time opportunities inside campus.</p>
+                </div>
+                
+                <!-- Academic Tracker -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-pink-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Academic Tracker</h3>
+                    <p class="text-gray-600">GPA calculator, result viewer, and progress tracking.</p>
+                </div>
+                
+                <!-- Clubs & Community -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Clubs & Community</h3>
+                    <p class="text-gray-600">Join, organize, and chat with club members.</p>
+                </div>
+                
+                <!-- AI Assistant -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-orange-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Assistant</h3>
+                    <p class="text-gray-600">Smart course planner and AI-powered support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">What Students Say</h2>
+                <p class="text-lg text-gray-600">Join thousands of satisfied students using OneTapCampus</p>
+            </div>
+            
+            <div class="relative">
+                <div id="testimonial-container" class="flex transition-transform duration-500">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide w-full flex-shrink-0">
+                        <div class="bg-gray-50 p-8 rounded-xl max-w-2xl mx-auto text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xl font-bold">S</span>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-4 italic">
+                                "OneTapCampus has completely transformed my university experience. Everything I need is in one place - from class schedules to study materials. It's like having a personal assistant for my academic life!"
+                            </p>
+                            <h4 class="font-semibold text-dark">Sarah Ahmed</h4>
+                            <p class="text-gray-600">Computer Science, BUET</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide w-full flex-shrink-0 hidden">
+                        <div class="bg-gray-50 p-8 rounded-xl max-w-2xl mx-auto text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xl font-bold">R</span>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-4 italic">
+                                "The marketplace feature is amazing! I've saved so much money buying second-hand books from other students. The attendance system is also super convenient."
+                            </p>
+                            <h4 class="font-semibold text-dark">Rahim Khan</h4>
+                            <p class="text-gray-600">Business Administration, DU</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide w-full flex-shrink-0 hidden">
+                        <div class="bg-gray-50 p-8 rounded-xl max-w-2xl mx-auto text-center">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xl font-bold">F</span>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 mb-4 italic">
+                                "As a club organizer, OneTapCampus has made it so much easier to manage events and communicate with members. The community features are fantastic!"
+                            </p>
+                            <h4 class="font-semibold text-dark">Fatima Rahman</h4>
+                            <p class="text-gray-600">Engineering, CUET</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 bg-primary rounded-full" data-slide="0"></button>
+                    <button class="testimonial-dot w-3 h-3 bg-gray-300 rounded-full" data-slide="1"></button>
+                    <button class="testimonial-dot w-3 h-3 bg-gray-300 rounded-full" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Get the latest updates about new features, campus events, and student opportunities.
+            </p>
+            
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="text" id="name" placeholder="Your Name" required
+                       class="flex-1 px-4 py-3 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-white">
+                <input type="email" id="email" placeholder="Your Email" required
+                       class="flex-1 px-4 py-3 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-white">
+                <button type="submit" 
+                        class="bg-white text-primary hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold">OneTapCampus</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        All your campus essentials—one click away. Helping students manage their entire campus life in one place.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#academics" class="text-gray-300 hover:text-white transition-colors">Academics</a></li>
+                        <li><a href="#events" class="text-gray-300 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="#community" class="text-gray-300 hover:text-white transition-colors">Community</a></li>
+                        <li><a href="#support" class="text-gray-300 hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 OneTapCampus. All rights reserved. Made with ❤️ for students in Bangladesh and beyond.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-blur', 'shadow-lg');
+            } else {
+                navbar.classList.remove('nav-blur', 'shadow-lg');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Testimonial slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('hidden', i !== index);
+            });
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-primary', i === index);
+                dot.classList.toggle('bg-gray-300', i !== index);
+            });
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+        
+        // Newsletter form submission
+        const newsletterForm = document.getElementById('newsletter-form');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Here you would typically send this data to your backend
+            alert(`Thank you ${name}! You've been subscribed to our newsletter.`);
+            newsletterForm.reset();
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+    
+    <!-- Additional CSS for animations -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .gradient-bg {
+                background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+            }
+        }
+    </style>
+</body>
+</html>
